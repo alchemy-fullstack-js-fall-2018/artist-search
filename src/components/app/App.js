@@ -8,6 +8,10 @@ export default function App() {
     <Router>
       <div>
         <h1>Hello World</h1>
+        <Switch>
+          <Route component={ROUTES.SEARCH.Component} path={ROUTES.SEARCH.path} />
+          <Redirect to={ROUTES.SEARCH.path}/>
+        </Switch>
       </div>
     </Router>
   );
