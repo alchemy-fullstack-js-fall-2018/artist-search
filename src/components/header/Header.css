@@ -1,0 +1,25 @@
+.header {
+  background-color: darkgreen;
+  color: lightyellow;
+}
+
+.nav {
+  margin: 0px 0px 15px 0px;
+
+}
+
+.link {
+  box-sizing: border-box;
+
+  text-decoration: none;
+  color: lightyellow;
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid lightyellow;
+
+
+  &:hover {
+    color: gold;
+    border: 1px solid gold;
+  }
+}
