@@ -28,13 +28,13 @@ class Search extends Component {
 
   componentDidMount() {
     this.doSearch();
-  };
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if(prevProps.location.search !== this.props.location.search) {
       this.doSearch();
     }
-  };
+  }
 
   updateSearchTerm = event => {
     event.preventDefault();
@@ -70,7 +70,7 @@ class Search extends Component {
           {artists}
         </ul>
       </Fragment>
-    )
+    );
   }
 
 }
