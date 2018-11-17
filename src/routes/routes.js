@@ -1,14 +1,21 @@
-// import EpisodeList from '../components/episodes/EpisodeList';
+// import React from 'react';
+// import Search from '../components/search/Search';
+// import ArtistDetail from '../components/artist/ArtistDetail';
 
 // export const ROUTES = {
-//   EPISODES: {
-//     path: '/episodes',
-//     Component: EpisodeList,
-//     linkPath: () => '/episodes'
+//   SEARCH: {
+//     path: '/search',
+//     Component: Search,
+//     linkTo: () => '/search'
 //   },
-//   EPISODE: {
-//     path: '/episodes/:id',
-//     Component: () => { }, // TODO: Write component
-//     linkPath: id => `/episodes/${id}`
+//   HI: {
+//     path: '/hi',
+//     Component: () => <h1>hi</h1>,
+//     linkTo: () => '/hi'
+//   },
+//   ARTIST: {
+//     path: '/artists/:id',
+//     Component: ArtistDetail,
+//     linkTo: id => `/artists/${id}`
 //   }
 // };
