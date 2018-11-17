@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pageable renders a Pageable component 1`] = `
+<Fragment>
+  <span>
+     out of 
+  </span>
+</Fragment>
+`;

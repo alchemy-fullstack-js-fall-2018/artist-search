@@ -23,7 +23,7 @@ class Search extends Component {
     if(!searchTerm) return;
 
     getArtists(searchTerm)
-      .then(({ pages, artists }) => this.setState({ artists }));
+      .then(({ pages, artists }) => this.setState({ artists, totalPages: pages }));
   };
 
   componentDidMount() {
