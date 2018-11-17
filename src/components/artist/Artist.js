@@ -7,7 +7,7 @@ export default function Artist({ name, description, id }) {
     <div>
       <h3>{name}</h3>
       <h4>{description}</h4>
-      
+      <Link to={ROUTES.ARTIST.linkTo(id)}>learn more!</Link>
     </div>
-  )
+  );
 }
