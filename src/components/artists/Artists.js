@@ -1,12 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import QueryArtists from '../queries/QueryArtists';
 import Paging from '../paging/Paging';
+import Results from '../results/Results';
+import { getArtists } from '../../services/fetch';
+import ArtistListItem from '../artists/ArtistListItem';
 
 export default class Artists extends Component {
 
   state = {
-    currentPage: 1,
-    totalPages: 1,
+    currentPage: 0,
+    totalPages: 0,
     totalResults: 0,
     query: {
 
@@ -22,6 +25,10 @@ export default class Artists extends Component {
     this.setState({ currentPage: page });
   };
 
+  updateCounts = (totalPages, totalResults) => {
+    this.setState({ totalPages, totalResults });
+  };
+
   render() {
 
     const { currentPage, totalPages, totalResults, query } = this.state;
@@ -35,7 +42,14 @@ export default class Artists extends Component {
         <Paging currentPage={currentPage}
           totalPages={totalPages}
           totalResults={totalResults}
-          updatePage={this.updatePage}/>
+          updatePage={this.updatePage}
+        />
+        <Results currentPage={currentPage}
+          updateCounts={this.updateCounts}
+          getResults={getArtists}
+          ResultComponent={ArtistListItem}
+          query={query}
+        />
       </Fragment>
     );
   }

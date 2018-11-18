@@ -16,7 +16,7 @@ export default class Results extends Component {
 
   updateResults = () => {
     const { currentPage, updateCounts, getResults, query } = this.props;
-    getResults(currentPage, query)
+    getResults('salamander', currentPage)
       .then(({ totalPages, totalResults, results }) => {
         this.setState({ results });
         updateCounts(totalPages, totalResults);
