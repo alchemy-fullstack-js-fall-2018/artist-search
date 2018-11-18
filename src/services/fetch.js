@@ -7,7 +7,7 @@ export const getArtists = (searchName, page = 1) => {
     totalResults: 0,
     results: []
   };
-  if(searchName.length < 2) return Promise.resolve(emptyResult);
+  if(searchName.length < 1) return Promise.resolve(emptyResult);
 
   const offset = (page - 1) * 25;
   return get(`http://musicbrainz.org/ws/2/artist?query=${searchName}&limit=${PAGE_SIZE}&offset=${offset}&fmt=json`)

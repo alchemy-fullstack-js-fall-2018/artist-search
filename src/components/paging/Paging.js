@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 
 const Paging = ({ currentPage, totalPages, totalResults, updatePage }) => {
 
+  const showTotalResults = totalResults > 0;
+  const showPlural = totalResults != 1;
+  const showPreviousButton = currentPage > 1;
+  const showNextButton = currentPage < totalPages;
+
   return (
     <Fragment>
-      <h3>Found {totalResults} result{totalResults != 1 && 's'}</h3>
-      {totalResults > 0 &&
-      <h3>
-        {currentPage > 1 && <button onClick={() => updatePage(currentPage - 1)}>Previous</button>}
-        <span> Page {currentPage} out of {totalPages} </span>
-        {currentPage < totalPages && <button onClick={() => updatePage(currentPage + 1)}>Next</button>}
-      </h3>}
+      {showTotalResults &&
+        <div>
+          <h3>Found {totalResults} result{showPlural && 's'}</h3>
+          <h3>
+            {showPreviousButton && <button onClick={() => updatePage(currentPage - 1)}>Previous</button>}
+            <span> Page {currentPage} out of {totalPages} </span>
+            {showNextButton && <button onClick={() => updatePage(currentPage + 1)}>Next</button>}
+          </h3>
+        </div>
+      }
     </Fragment>
   );
 };
