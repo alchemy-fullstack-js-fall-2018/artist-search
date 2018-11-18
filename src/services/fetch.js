@@ -19,6 +19,7 @@ export const getArtists = (searchName, page = 1) => {
         results: artists.map(artist => ({
           name: artist.name,
           description: artist.disambiguation,
+          type: artist.type,
           id: artist.id
         }))
       };

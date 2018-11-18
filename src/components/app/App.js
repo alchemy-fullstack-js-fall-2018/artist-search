@@ -1,22 +1,18 @@
-import React, { Fragment } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
-import Artists from '../artists/Artists';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ROUTES } from '../../routes/routes';
 
 export default function App() {
   return (
-    <Fragment>
-      <h1>Recording Artist Search Application</h1>
-      <Artists />
-      <Router>
+    <Router>
+      <div>
+        <h1>Recording Artist Search Application</h1>
         <Switch>
-          {/* <Route path={ROUTES.EPISODES.path} component={ROUTES.EPISODES.Component} /> */}
+          <Route component={ROUTES.ARTIST_SEARCH.Component} path={ROUTES.ARTIST_SEARCH.path} />
+          <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path} />
+          <Redirect to={ROUTES.ARTIST_SEARCH.path} />
         </Switch>
-      </Router>
-    </Fragment>
+      </div>
+    </Router>
   );
 }
