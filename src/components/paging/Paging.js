@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 
 const Paging = ({ currentPage, totalPages, totalResults, updatePage }) => {
 
+  const plural = totalResults === 1 ? '' : 's';
+
   return (
     <Fragment>
-      <h3>Found {totalResults} artists</h3>
+      <h3>Found {totalResults} artist{plural}</h3>
       <h3>
-        <button onClick={() => updatePage(currentPage - 1)}>Previous</button>
+        {currentPage > 1 && <button onClick={() => updatePage(currentPage - 1)}>Previous</button>}
         <span> Page {currentPage} out of {totalPages} </span>
-        <button onClick={() => updatePage(currentPage + 1)}>Next</button>
+        {currentPage < totalPages && <button onClick={() => updatePage(currentPage + 1)}>Next</button>}
       </h3>
     </Fragment>
   );
