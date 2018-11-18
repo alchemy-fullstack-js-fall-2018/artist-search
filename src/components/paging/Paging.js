@@ -7,7 +7,7 @@ const Paging = ({ currentPage, totalPages, totalResults, updatePage }) => {
 
   return (
     <Fragment>
-      <h3>Found {totalResults} artist{plural}</h3>
+      <h3>Found {totalResults} result{plural}</h3>
       <h3>
         {currentPage > 1 && <button onClick={() => updatePage(currentPage - 1)}>Previous</button>}
         <span> Page {currentPage} out of {totalPages} </span>

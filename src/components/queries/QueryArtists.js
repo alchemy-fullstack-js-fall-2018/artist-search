@@ -9,7 +9,7 @@ const QueryArtists = ({ query, onQueryItemChange }) => {
         <legend>Query Artists Here</legend>
       </fieldset>
     </form>
-  );;
+  );
 
 
 };
