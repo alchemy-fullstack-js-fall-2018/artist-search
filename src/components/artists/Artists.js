@@ -8,11 +8,11 @@ import ArtistListItem from '../artists/ArtistListItem';
 export default class Artists extends Component {
 
   state = {
-    currentPage: 0,
-    totalPages: 0,
+    currentPage: 1,
+    totalPages: 1,
     totalResults: 0,
     query: {
-
+      name: ''
     }
   };
 

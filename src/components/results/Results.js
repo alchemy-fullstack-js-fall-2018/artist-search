@@ -16,7 +16,7 @@ export default class Results extends Component {
 
   updateResults = () => {
     const { currentPage, updateCounts, getResults, query } = this.props;
-    getResults('salamander', currentPage)
+    getResults(query.name, currentPage)
       .then(({ totalPages, totalResults, results }) => {
         this.setState({ results });
         updateCounts(totalPages, totalResults);
@@ -51,5 +51,4 @@ export default class Results extends Component {
       </Fragment>
     );
   }
-
 }

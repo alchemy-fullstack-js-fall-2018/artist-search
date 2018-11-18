@@ -5,9 +5,8 @@ const QueryArtists = ({ query, onQueryItemChange }) => {
 
   return (
     <form>
-      <fieldset>
-        <legend>Query Artists Here</legend>
-      </fieldset>
+      <label htmlFor="name">Artist name: </label>
+      <input type="text" name="name" value={query.name} onChange={onQueryItemChange}/>
     </form>
   );
 
