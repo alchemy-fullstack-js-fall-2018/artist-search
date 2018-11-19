@@ -10,8 +10,7 @@ export default class Lyrics extends Component {
   };
 
   fetchLyrics = () => {
-    const artist = this.props.location.pathname.slice(1).split('/')[1];
-    const title = this.props.location.pathname.slice(1).split('/')[2];
+    const [, artist, title] = this.props.location.pathname.slice(1).split('/');
     getLyrics(artist, title)
       .then(({ lyrics }) => this.setState({ lyrics }));
   };
@@ -22,10 +21,11 @@ export default class Lyrics extends Component {
 
   render() {
     const { lyrics } = this.state;
+    const [, artist, title] = this.props.location.pathname.slice(1).split('/');
     return (
       <div>
-        <h3>Lyrics:</h3>
-        <p>{lyrics}</p>
+        <h3>{artist} - {title}</h3>
+        <pre>{lyrics}</pre>
       </div>
     );
   }
