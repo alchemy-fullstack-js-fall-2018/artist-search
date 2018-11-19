@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import { getLyrics } from '../../services/lyricSearch';
 
+import styles from './Lyrics.css';
 
 export default class Lyrics extends Component {
 
@@ -25,7 +26,7 @@ export default class Lyrics extends Component {
     return (
       <div>
         <h3>{artist} - {title}</h3>
-        <pre>{lyrics}</pre>
+        <pre className={styles.lyrics}>{lyrics}</pre>
       </div>
     );
   }
