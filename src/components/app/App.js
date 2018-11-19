@@ -10,6 +10,7 @@ export default function App() {
         <h1>Hello World</h1>
         <Switch>
           <Route component={ROUTES.SEARCH.Component} path={ROUTES.SEARCH.path} />
+          <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path}/>
           <Redirect to={ROUTES.SEARCH.path}/>
         </Switch>
       </div>

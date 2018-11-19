@@ -3,7 +3,7 @@ import { get } from './request';
 const PAGE_SIZE = 25;
 
 export const getArtists = (searchName, page = 0) => {
-  const offset = page * 25;
+  const offset = (page - 1) * 25;
   return get(`http://musicbrainz.org/ws/2/artist?query=${searchName}&limit=${PAGE_SIZE}&offset=${offset}&fmt=json`)
     .then(({ count, artists }) => {
       return {
