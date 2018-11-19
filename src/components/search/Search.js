@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { getArtists } from '../../services/api';
-
+import Artists from '../artists/Artists';
 export default class App extends Component {
     state = {
         results: [],
@@ -8,13 +7,8 @@ export default class App extends Component {
     };
 
     onChange = ({ target }) => {
-        console.log('name', target.name, 'value', target.value);
         this.setState({ [target.name]: target.value });
-        getArtists(target.value)
-            .then((results) => {
-                this.setState({ results });
-                console.log({ results });
-            });
+        console.log('artistName', target.value);
     };
 
     render() {
@@ -27,6 +21,7 @@ export default class App extends Component {
                             <input type="text" name="artistName" value={artistName} onChange={this.onChange} />
                         </label>
                     </form>
+                    { artistName && <Artists artistName={artistName} /> }
                 </div>
             </Fragment>
         );
