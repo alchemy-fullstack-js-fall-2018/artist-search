@@ -9,11 +9,11 @@ export default function App() {
       <div>
         <h1>Artist Info</h1>
         <Switch>
-          {/* <Route component={ROUTES.SEARCH.Component} path={ROUTES.SEARCH.path} /> */}
+          <Route component={ROUTES.SEARCH.Component} path={ROUTES.SEARCH.path} />
           <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path} />
-          {/* <Route render={ROUTES.HI.Component} path={ROUTES.HI.path} /> */}
-          {/* <Redirect from="/oldPage" to="/newPage" /> */}
-          {/* <Redirect to={ROUTES.SEARCH.path} /> */}
+          <Route render={ROUTES.LANDING.Component} path={ROUTES.LANDING.path} />
+          <Redirect from="/oldPage" to="/newPage" />
+          <Redirect to={ROUTES.SEARCH.path} />
         </Switch>
       </div>
     </Router>

@@ -19,11 +19,11 @@ class Search extends Component {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
-    // //PureComponent
-    // return nextProps !== this.props && nextState !== this.state;
+    //PureComponent
+    return nextProps !== this.props && nextState !== this.state;
 
-    // // Component
-    // return true
+    // Component
+    return true
   }
 
   doSearch = () => {
@@ -72,7 +72,7 @@ class Search extends Component {
 
     return (
       <Fragment>
-        <Link to={ROUTES.HI.linkTo()}>Link!</Link>
+        <Link to={ROUTES.LANDING.linkTo()}>Link!</Link>
         <form onSubmit={this.updateSearchTerm}>
           <input id="searchTerm" type="text" />
           <button type="submit">Search</button>

@@ -7,5 +7,15 @@ export const ROUTES = {
     path: '/artists/:id',
     Component: ArtistDetail,
     linkTo: id => `/artists/${id}`
+  },
+  SEARCH: {
+    path: '/search',
+    Component: Search,
+    linkTo: () => '/search'
+  },
+  LANDING: {
+    path: '/landing',
+    Component: () => <h1>Welcome To Artist Search</h1>,
+    linkTo: () => '/landing'
   }
 };
