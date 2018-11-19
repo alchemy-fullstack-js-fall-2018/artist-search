@@ -8,7 +8,6 @@ export default class App extends Component {
 
     onChange = ({ target }) => {
         this.setState({ [target.name]: target.value });
-        console.log('artistName', target.value);
     };
 
     render() {
@@ -28,5 +27,3 @@ export default class App extends Component {
         );
     } 
 }
-
-

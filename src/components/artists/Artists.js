@@ -14,11 +14,9 @@ export default class Artists extends Component {
 
     updateResults = () => {
         const { artistName } = this.props;
-        console.log('artistName update', artistName);
         getArtists(artistName)
             .then(results => {
                 this.setState({ artists: results });
-                console.log('results', results);
             });
     };
 
