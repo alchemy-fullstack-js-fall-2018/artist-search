@@ -7,7 +7,7 @@ const Song = ({ artist, title }) => {
   return (
     <Fragment>
       <h4><em>{title}</em></h4>
-      <Link to={ROUTES.LYRICS.linkTo(artist, title)}>Get Details</Link>
+      <Link to={ROUTES.LYRICS.linkTo(artist, title)}>Get Lyrics</Link>
     </Fragment>
   );
 };
