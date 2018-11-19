@@ -9,9 +9,9 @@ import { ROUTES } from '../../routes/routes';
 export default function App() {
     return (
         <Fragment>
-            <h1>Artist Search</h1>
             <Router>
                 <Switch>
+                    <Route path={ROUTES.ARTIST.path} component={ROUTES.ARTIST.Component} />
                     <Route path={ROUTES.SEARCH.path} component={ROUTES.SEARCH.Component} />
                 </Switch>
             </Router>

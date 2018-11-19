@@ -15,6 +15,7 @@ export default class App extends Component {
         const { artistName } = this.state;
         return (
             <Fragment>
+                <h2>Artist Search</h2>
                 <div>
                     <form>
                         <label> Search for Artists By Name: 
