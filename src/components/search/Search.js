@@ -21,7 +21,7 @@ class Search extends Component {
 
   doSearch = () => {
     const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
-    if(!searchTerm) return;
+    if(!searchTerm) return this.setState({ artists: [] });
 
     getArtists(searchTerm, this.state.currentPage)
       .then(({ pages, artists }) => this.setState({ artists, totalPages: pages }));

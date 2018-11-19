@@ -18,6 +18,7 @@ export default class ArtistDetail extends Component {
 
   render() {
     const { id, name, works } = this.state.artist;
+    console.log(name);
     if(works === undefined) {
       return null;
     }
@@ -26,7 +27,7 @@ export default class ArtistDetail extends Component {
       <div>
         <h2>{name}</h2>
         <h4>{id}</h4>
-        <Works works={works} />
+        <Works name={name} works={works} />
       </div>
     );
   }
