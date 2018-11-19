@@ -1,9 +1,9 @@
-import ArtistList from '../components/artists/ArtistList';
+import Search from '../components/search/Search';
 
 export const ROUTES = {
-    ARTISTS: {
-    path: '/artists',
-    Component: ArtistList,
-    linkPath: () => '/artists'
+    SEARCH: {
+    path: '/search',
+    Component: Search,
+    linkPath: () => '/search'
   }
 };
