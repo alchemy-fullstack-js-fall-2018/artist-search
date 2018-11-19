@@ -21,9 +21,10 @@ class Search extends Component {
 
   doSearch = () => {
     const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
+    const { currentPage } = this.state;
     if(!searchTerm) return;
 
-    getArtists(searchTerm)
+    getArtists(searchTerm, currentPage)
       .then(({ pages, artists }) => this.setState({ artists, totalPages: pages }));
   };
 
@@ -47,10 +48,13 @@ class Search extends Component {
     event.preventDefault();
     const searchTerm = document.getElementById('searchTerm').value;
     const searchQuery = queryString.stringify({ searchTerm });
-    this.props.history.push({           /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
-      pathName: ROUTES.SEARCH.path,     /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
-      search: searchQuery               /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
+    this.setState({ currentPage: 1 }, () =>{
+      this.props.history.push({           /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
+        pathName: ROUTES.SEARCH.path,     /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
+        search: searchQuery               /* <=====TODO: ASK RYAN WHAT'S GOING ON HERE */
+      });
     });
+
   };
 
   render() {

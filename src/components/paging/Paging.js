@@ -11,7 +11,6 @@ export default function Paging({ currentPage, totalPages, updatePage }) {
     nextButton = <button onClick={() => updatePage(currentPage + 1)}>Next</button>;
   }
 
-
   return (
     <Fragment>
       {previousButton}
