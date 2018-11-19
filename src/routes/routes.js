@@ -1,5 +1,6 @@
 import Artists from '../components/artists/Artists';
 import ArtistDetail from '../components/artists/ArtistDetail';
+import WorkDetail from '../components/works/WorkDetail';
 
 export const ROUTES = {
   ARTIST_SEARCH: {
@@ -11,5 +12,10 @@ export const ROUTES = {
     path: '/artists/:id',
     Component: ArtistDetail,
     linkTo: id => `/artists/${id}`
+  },
+  WORK: {
+    path: '/works/??',
+    Component: WorkDetail,
+    linkTo: id => '/works/??'
   }
 };
