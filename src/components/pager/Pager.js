@@ -5,23 +5,25 @@ import styles from './Pager.css';
 
 function Pager({ currentPage, totalPages, updatePage }) {
 
+  const page = (currentPage) ? currentPage : 0;
+
   let previousButton = null;
-  if(currentPage > 0) {
+  if(page > 0) {
     previousButton =
       <button
         className={styles.pageButton}
-        onClick={() => updatePage(currentPage - 1)}
+        onClick={() => updatePage(page - 1)}
       >
         Previous
       </button>;
   }
 
   let nextButton = null;
-  if(currentPage < totalPages - 1) {
+  if(page < totalPages - 1) {
     nextButton =
       <button
         className={styles.pageButton}
-        onClick={() => updatePage(currentPage + 1)}
+        onClick={() => updatePage(page + 1)}
       >
         Next
       </button>;
@@ -30,7 +32,7 @@ function Pager({ currentPage, totalPages, updatePage }) {
   return (
     <div>
       {previousButton}
-      <span>{currentPage + 1} out of {totalPages} pages</span>
+      <span>{page + 1} out of {totalPages} pages</span>
       {nextButton}
     </div>
   );

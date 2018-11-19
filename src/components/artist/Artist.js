@@ -1,10 +1,6 @@
 import React, { Component, Fragment } from 'react';
-
+import Songs from '../songs/Songs';
 import { getArtist } from '../../services/musicSearch';
-
-
-import { Link } from 'react-router-dom';
-import { ROUTES } from '../../routes/routes';
 
 export default class Artist extends Component {
   state = {
@@ -12,7 +8,8 @@ export default class Artist extends Component {
   };
 
   fetchArtist = () => {
-    getArtist(this.props.match.params.id)
+    const { id } = this.props.match.params;
+    getArtist(id)
       .then(artist => this.setState({ artist }));
   };
 
@@ -21,25 +18,15 @@ export default class Artist extends Component {
   }
 
   render() {
-    const { id, name, works = [] } = this.state.artist;
-
-    const Work = ({ title }) => {
-      return (
-        <Fragment>
-          <h4><em>{title}</em></h4>
-        </Fragment>
-      );
-    };
-
+    const { name, works = [] } = this.state.artist;
 
     return (
       <div>
         <h2>{name}</h2>
-
-        <h3>Songs:</h3>
-        {works.map(work =>
-          <Work key={work.id} title={work.title} />)
-        }
+        <Songs
+          works={works}
+          artist={name}
+        />
       </div>
     );
   }
