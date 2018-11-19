@@ -7,7 +7,7 @@ const Song = ({ title }) => {
     </Fragment>
   );
 };
-export default function Songs ({ songs }) {
+export default function Songs({ songs }) {
   return (
     <Fragment>
       {songs.map(song => <Song key={song.id} title={song.title} />)}

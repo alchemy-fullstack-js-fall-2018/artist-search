@@ -4,6 +4,7 @@ import queryString from 'querystring';
 import { withRouter, Link } from 'react-router-dom';
 import { getArtists } from '../../services/musicSearch';
 import { ROUTES } from '../../routes/routes';
+import Paging from '../paging/Paging';
 import Artist from '../artist/Artist';
 
 class Search extends Component {
@@ -13,7 +14,7 @@ class Search extends Component {
   };
 
   state = {
-    page: 1,
+    currentPage: 1,
     totalPages: null,
     artists: []
   };
@@ -35,6 +36,12 @@ class Search extends Component {
       this.doSearch();
     }
   }
+
+  handlePageUpdate = page => {
+    this.setState({ currentPage: page }, () => {
+      this.doSearch();
+    });
+  };
 
   updateSearchTerm = event => {
     event.preventDefault();
@@ -61,6 +68,11 @@ class Search extends Component {
 
     return (
       <Fragment>
+        <Paging
+          currentPage={this.state.currentPage}
+          totalPages={this.state.totalPages}
+          updatePage={this.handlePageUpdate}
+        />
         <form onSubmit={this.updateSearchTerm}>
           <input id="searchTerm" type="text"/>
           <button>Search!</button>
