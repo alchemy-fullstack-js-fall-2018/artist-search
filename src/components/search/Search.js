@@ -3,7 +3,7 @@ import Artists from '../artists/Artists';
 export default class App extends Component {
     state = {
         results: [],
-        artistName: ''
+        artistName: '',
     };
 
     onChange = ({ target }) => {
