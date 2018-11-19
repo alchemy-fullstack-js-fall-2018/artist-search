@@ -5,6 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { getArtists } from '../../services/musicSearch';
 import { ROUTES } from '../../routes/routes';
 import Artist from '../artist/Artist';
+import styles from './search.css';
 
 class Search extends Component {
   static propTypes = {
@@ -18,13 +19,13 @@ class Search extends Component {
     artists: []
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    //PureComponent
-    return nextProps !== this.props && nextState !== this.state;
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   //PureComponent
+  //   return nextProps !== this.props && nextState !== this.state;
 
-    // Component
-    return true
-  }
+  //   // Component
+  //   return true
+  // }
 
   doSearch = () => {
     const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
@@ -77,7 +78,7 @@ class Search extends Component {
           <input id="searchTerm" type="text" />
           <button type="submit">Search</button>
         </form>
-        <ul>
+        <ul className={styles.search}>
           {artists}
         </ul>
       </Fragment >

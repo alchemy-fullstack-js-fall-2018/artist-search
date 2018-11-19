@@ -5,8 +5,7 @@ import { ROUTES } from '../../routes/routes';
 export default function Arist ({ name, description, id }) {
   return (
     <div>
-      <h2>{name} - {description} </h2>
-      <Link to={ROUTES.ARTIST.linkTo(id)}>Get Details: </Link>
+      <h3>{name} - {description} <Link to={ROUTES.ARTIST.linkTo(id)}>Get Details: </Link> </h3>
     </div>
   );
 }
