@@ -14,7 +14,7 @@ export const ROUTES = {
     linkTo: id => `/artists/${id}`
   },
   SONG: {
-    path:'/lyrics/:artist/:lyrics',
+    path:'/lyrics/:artist/:song',
     Component: Song,
     linkTo: (artist, song) => `/lyrics/${artist}/${song}`
   }

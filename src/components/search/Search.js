@@ -31,7 +31,7 @@ class Search extends Component {
     this.doSearch();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
 
     if(prevProps.location.search !== this.props.location.search) {
       this.doSearch();

@@ -4,7 +4,6 @@ import { ROUTES } from '../../routes/routes';
 
 
 const Work = ({ title, name }) => {
-  console.log(name);
   return (
     <Fragment>
       <h3>{title}</h3>
@@ -14,7 +13,6 @@ const Work = ({ title, name }) => {
 };
 
 export default function Works({ works, name }) {
-  console.log(works);
   return (
     <Fragment>
       {works.map(work => <Work key={work.id} title={work.title} name={name} />)}
