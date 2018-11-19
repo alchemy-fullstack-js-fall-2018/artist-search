@@ -1,15 +1,5 @@
-// export const getArtists = () => {
-//     return fetch(`http://musicbrainz.org/ws/2/artist?query=nirvana&fmt=json&limit=25`)
-//         .then(res => res.json())
-//         .then(json => {
-//             const artists = json.results.artists.map(artist => {
-//                 return {
-//                     name: artist.name
-//                 };
-//             });
-
-//             return {
-//                 artists
-//             };
-//         });
-// };
+export const getArtists = (artistName) => {
+    return fetch(`http://musicbrainz.org/ws/2/artist?query=${artistName}&fmt=json&limit=25`)
+        .then(res => res.json())
+        .then(json => json.artists);
+};
