@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const WorkListItem = ({ work }) => {
-  const { title, language } = work;
+  const { artist, title, language } = work;
 
   return (
     <li>
