@@ -10,4 +10,8 @@ describe('search', () => {
   it('renders an search component', () => {
     expect(wrapper).toMatchSnapshot();
   });
+  it('is a pageable list', () => {
+    expect(wrapper.find('Pageable')).toBeTruthy();
+  });
+
 });

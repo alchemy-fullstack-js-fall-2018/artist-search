@@ -7,7 +7,7 @@ export default function App() {
 
     <Router>
       <div>
-        <h1>Hello World</h1>
+        <h1>All The Songs</h1>
         <Switch>
           <Route component={ROUTES.SEARCH.Component} path={ROUTES.SEARCH.path} />
           <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path} />

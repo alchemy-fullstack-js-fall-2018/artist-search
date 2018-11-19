@@ -18,7 +18,6 @@ export default class ArtistDetail extends Component {
 
   render() {
     const { id, name, works } = this.state.artist;
-    console.log(name);
     if(works === undefined) {
       return null;
     }

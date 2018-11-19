@@ -1,6 +1,6 @@
 import Search from '../components/search/Search';
 import ArtistDetail from '../components/artist/ArtistDetail';
-import Song from '../components/song/Song';
+import Songs from '../components/song/Songs';
 
 export const ROUTES = {
   SEARCH: {
@@ -15,7 +15,7 @@ export const ROUTES = {
   },
   SONG: {
     path:'/lyrics/:artist/:song',
-    Component: Song,
+    Component: Songs,
     linkTo: (artist, song) => `/lyrics/${artist}/${song}`
   }
 };
