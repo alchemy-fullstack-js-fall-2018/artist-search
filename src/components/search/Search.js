@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { getArtists } from '../../services/musicSearch';
 import { ROUTES } from '../../routes/routes';
 import Artist from '../artist/Artist';
+import Pageable from '../pageable/Pageable';
 
 class Search extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class Search extends Component {
   };
 
   state = {
-    page: 1,
+    currentPage: 1,
     totalPages: null,
     artists: []
   };
@@ -22,7 +23,7 @@ class Search extends Component {
     const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
     if(!searchTerm) return;
 
-    getArtists(searchTerm)
+    getArtists(searchTerm, this.state.currentPage)
       .then(({ pages, artists }) => this.setState({ artists, totalPages: pages }));
   };
 
@@ -37,6 +38,12 @@ class Search extends Component {
     }
   }
 
+  handlePageUpdate = page => {
+    this.setState({ currentPage: page }, () => {
+      this.doSearch();
+    });
+  };
+
   updateSearchTerm = event => {
     event.preventDefault();
     const searchTerm = document.getElementById('searchTerm').value;
@@ -48,25 +55,30 @@ class Search extends Component {
   };
 
   render() {
-    const artists = this.state.artists.map(artist => {
+
+    const { currentPage, totalPages, artists } = this.state;
+    const artistComponents = artists.map(artist => {
       return (
-        <li key={artist.id}>
-          <Artist id={artist.id}
-            name={artist.name}
-            description={artist.description} />
-        </li>
+
+        <Artist
+          key={artist.id}
+          id={artist.id}
+          name={artist.name}
+          description={artist.description}
+        />
       );
     });
-
     return (
       <Fragment>
         <form onSubmit={this.updateSearchTerm}>
           <input id="searchTerm" type="text" />
           <button type="submit">Search</button>
         </form>
-        <ul>
-          {artists}
-        </ul>
+        <Pageable currentPage={currentPage}
+          totalPages={totalPages}
+          updatePage={this.handlePageUpdate}
+        />
+        {artistComponents}
       </Fragment >
     );
   }
