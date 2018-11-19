@@ -35,6 +35,13 @@ export const getArtist = id => {
     }));
 };
 
+export const getLyrics = (artist, title) => {
+  return get (`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    .then(result => (
+      result.lyrics
+    ));
+};
+
 const get = url => {
   return fetch(url)
     .then(res => res.json());
