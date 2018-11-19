@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component tests header snapshot 1`] = `
+<div>
+  <h1>
+    Recording Artist Search Application
+  </h1>
+  <h2>
+    Search for Artists
+  </h2>
+  <form>
+    <label
+      htmlFor="name"
+    >
+      Artist name: 
+    </label>
+    <input
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </form>
+  <div>
+    <ul />
+  </div>
+</div>
+`;
