@@ -57,7 +57,7 @@ class Search extends Component {
   updateSearch = event => {
     event.preventDefault();
     const q = document.getElementById('q').value;
-    this.updateHistory({ q, page: 1 });
+    this.updateHistory({ q, page: 0 });
   };
 
   updatePage = page => {
@@ -74,9 +74,11 @@ class Search extends Component {
     const results = this.state.artists.map(artist => {
       return (
         <li key={artist.id}>
-          <Result id={artist.id}
+          <Result
+            id={artist.id}
             name={artist.name}
-            description={artist.description} />
+            description={artist.description}
+          />
         </li>
       );
     });
