@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { getArtists } from '../../services/musicSearch';
 import { ROUTES } from '../../routes/routes';
 import Artist from '../artists/Artist';
+import Paging from '../paging/Paging';
 
 class Search extends Component {
   static propTypes = {
@@ -13,17 +14,20 @@ class Search extends Component {
   };
 
   state = {
-    page: 1,
+    currentPage: 1,
     totalPages: null,
     artists: []
   };
 
   doSearch = () => {
-    const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
-    if(!searchTerm) return;
+    const { searchTerm } = queryString.parse(
+      this.props.location.search.slice(1)
+    );
+    if(!searchTerm) return this.setState({ artists: [] });
 
-    getArtists(searchTerm)
-      .then(({ artists }) => this.setState({ artists }));
+    getArtists(searchTerm, this.state.currentPage).then(({ pages, artists }) =>
+      this.setState({ totalPages: pages, artists })
+    );
   };
 
   componentDidMount() {
@@ -35,6 +39,13 @@ class Search extends Component {
       this.doSearch();
     }
   }
+
+  updateHandlePage = page => {
+    this.setState({ currentPage: page }, () => {
+      this.doSearch();
+    });
+  };
+
   updateSearchTerm = event => {
     event.preventDefault();
     const searchTerm = document.getElementById('searchTerm').value;
@@ -45,14 +56,17 @@ class Search extends Component {
     });
   };
 
-
   render() {
-    const artists = this.state.artists.map(artist => {
+    const { currentPage, totalPages, artists } = this.state;
+
+    const artistsList = artists.map(artist => {
       return (
         <li key={artist.id}>
-          <Artist id={artist.id}
+          <Artist
+            id={artist.id}
             name={artist.name}
-            description={artist.description} />
+            description={artist.description}
+          />
         </li>
       );
     });
@@ -63,10 +77,12 @@ class Search extends Component {
           <input id="searchTerm" type="text" />
           <button type="submit">Search</button>
         </form>
-        <ul>
-          {artists}
-        </ul>
-      </Fragment >
+        <Paging currentPage={currentPage}
+          totalPages={totalPages}
+          updatePage={this.updateHandlePage}
+        />
+        <ul>{artistsList}</ul>
+      </Fragment>
     );
   }
 }
