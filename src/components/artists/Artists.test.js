@@ -1,11 +1,11 @@
 import React from 'react';
-import App from './App';
+import Artists from './Artists';
 import render from 'react-test-renderer';
 
-describe('App component tests', () => {
+describe('Artists component tests', () => {
   test('header snapshot', () => {
     expect(render
-      .create(<App />)
+      .create(<Artists />)
       .toJSON()).toMatchSnapshot();
   });
 });

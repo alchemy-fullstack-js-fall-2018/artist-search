@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for WorkDetail component renders an WorkDetail component 1`] = `
+<div>
+  <h2>
+    Joni
+  </h2>
+  <h3>
+    Blue
+  </h3>
+  <pre />
+</div>
+`;

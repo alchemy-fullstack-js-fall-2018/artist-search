@@ -26,20 +26,6 @@ const props = {
   }
 };
 
-jest.mock('../../services/fetch', () => {
-  const resultOfGetResults = {
-    totalPages: 1,
-    totalResults: 1,
-    results: [{
-      name: 'Joni Mitchell',
-      description: 'American folksinger',
-      type: 'Person',
-      id: '12345'
-    }]
-  };
-  return { getResults: () => Promise.resolve(resultOfGetResults) };
-});
-
 describe ('tests for Results component', () => {
 
   it('renders an Results component', () => {
