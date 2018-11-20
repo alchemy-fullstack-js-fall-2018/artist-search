@@ -21,3 +21,9 @@ export const getArtist = id => {
         `http://musicbrainz.org/ws/2/artist/${id}?fmt=json&inc=works`
     ).then(res => res.json());
 };
+
+export const getSong = (artistName, songName) => {
+    return fetch(
+        `https://api.lyrics.ovh/v1/${artistName}/${songName}`
+    ).then(res => res.json());
+};

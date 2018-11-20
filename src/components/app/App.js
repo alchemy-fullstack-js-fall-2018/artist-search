@@ -12,6 +12,7 @@ export default function App() {
             <Router>
                 <Switch>
                     <Route path={ROUTES.ARTIST.path} component={ROUTES.ARTIST.Component} />
+                    <Route path={ROUTES.SONG.path} component={ROUTES.SONG.Component} />
                     <Route path={ROUTES.SEARCH.path} component={ROUTES.SEARCH.Component} />
                 </Switch>
             </Router>

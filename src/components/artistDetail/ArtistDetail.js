@@ -28,7 +28,7 @@ export default class Artist extends Component {
         const songs = works.map(song => {
             return (
                 <Song key={song.id}
-                    title={song.title} />
+                    song={song} />
             );
         });
 
