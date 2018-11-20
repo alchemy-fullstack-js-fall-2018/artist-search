@@ -12,13 +12,17 @@ export default class WorkDetail extends Component {
       .then(lyrics => this.setState({ lyrics }));
   };
 
+  componentDidMount() {
+    this.fetchLyrics();
+  }
+
   render() {
     const { artist, title } = this.props.match.params;
     return (
       <div>
+        <h2>{artist}</h2>
         <h3>{title}</h3>
-        <h4>{artist}</h4>
-        <p>{this.lyrics}</p>
+        <pre>{this.state.lyrics}</pre>
       </div>
     );
   }
