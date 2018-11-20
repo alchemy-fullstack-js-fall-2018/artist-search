@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for Results component renders an Results component 1`] = `
+<Fragment>
+  <div>
+    <ul />
+  </div>
+</Fragment>
+`;
