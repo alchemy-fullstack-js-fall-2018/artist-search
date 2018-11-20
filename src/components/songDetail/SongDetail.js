@@ -4,18 +4,19 @@ import PropTypes from 'prop-types';
 
 export default class SongDetail extends Component {
     static propTypes = {
-        artistName: PropTypes.string.isRequired,
-        songName: PropTypes.string.isRequired,
+        match: PropTypes.object.isRequired
     };
 
     state = {
-        song: null
+        songName: '',
+        lyrics: ''
     };
 
     fetchSong = () => {
-        const { artistName, songName } = this.props;
-        getSong(artistName, songName)
-            .then(song => this.setState({ song }));
+        getSong(
+            this.props.match.params.artistName,
+            this.props.match.params.songName
+        ).then(song => this.setState({ lyrics: song.lyrics, songName: this.props.match.params.songName }));
     };
 
     componentDidMount() {
@@ -23,13 +24,12 @@ export default class SongDetail extends Component {
     }
 
     render() {
-        if(!this.state.song) return null;
-        const { lyrics } = this.state.song;
-        const { songName } = this.props;
+        const { lyrics, songName } = this.state;
+        if(!songName || !lyrics) return null;
 
         return (
             <Fragment>
-                <h2>Song Detail for {songName}</h2>
+                <h2>Song Lyrics for {songName}</h2>
                 <p>{lyrics}</p>
             </Fragment>
         );

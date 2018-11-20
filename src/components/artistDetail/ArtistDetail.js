@@ -24,11 +24,12 @@ export default class Artist extends Component {
     render() {
         if(!this.state.artist) return null;
         const { name, works } = this.state.artist;
-
+        
         const songs = works.map(song => {
             return (
                 <Song key={song.id}
-                    song={song} />
+                    artistName={name} 
+                    songName={song.title} />
             );
         });
 

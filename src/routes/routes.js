@@ -14,8 +14,8 @@ export const ROUTES = {
         linkPath: id => `/artists/${id}`
     },
     SONG: {
-        path: '/songs/:id',
+        path: '/songs/:artistName/:songName',
         Component: SongDetail,
-        linkPath: id => `/songs/${id}`
+        linkPath: (artistName, songName) => `/songs/${artistName}/${songName}`
     }
 };
