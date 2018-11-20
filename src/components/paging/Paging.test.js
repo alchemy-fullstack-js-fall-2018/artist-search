@@ -1,8 +1,19 @@
 import React from 'react';
-import Paging from './Paging';
 import { shallow } from 'enzyme';
+import Paging from './Paging';
 
 describe ('tests for Paging component', () => {
+
+  it('renders a paging component', () => {
+    const updatePageFn = jest.fn();
+    const wrapper = shallow(
+      <Paging currentPage={10}
+        totalPages={20}
+        totalResults={40}
+        updatePage={updatePageFn}
+      />);
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('decrements the currentPage when previous is clicked', () => {
     const updatePageFn = jest.fn();

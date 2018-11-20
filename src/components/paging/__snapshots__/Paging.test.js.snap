@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for Paging component renders a paging component 1`] = `
+<Fragment>
+  <div>
+    <h3>
+      Found 
+      40
+       result
+      s
+    </h3>
+    <h3>
+      <button
+        onClick={[Function]}
+      >
+        Previous
+      </button>
+      <span>
+         Page 
+        10
+         out of 
+        20
+         
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </h3>
+  </div>
+</Fragment>
+`;
