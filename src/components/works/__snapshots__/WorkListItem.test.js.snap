@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for WorkListItem component renders an WorkListItem component 1`] = `
+<li>
+  <Link
+    replace={false}
+    to="/works/Joni Mitchell/Blue"
+  >
+    Blue
+  </Link>
+</li>
+`;
