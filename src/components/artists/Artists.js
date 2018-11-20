@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { getArtists } from '../../services/api';
 import PropTypes from 'prop-types';
 import Artist from '../artist/Artist';
@@ -10,21 +10,21 @@ export default class Artists extends Component {
 
     state = {
         artists: [],
-        currentPage: 0,
-        totalPages: 0
+        currentPage: 1,
+        totalPages: null
     };
 
     updateResults = () => {
         const { artistName } = this.props;
-        getArtists(artistName, this.state.currentPage).then(({ results, pages }) => {
-            this.setState({ artists: results, totalPages: pages });
+        getArtists(artistName, this.state.currentPage).then(({ artists, pages }) => {
+            this.setState({ artists, totalPages: pages });
         });
     };
 
     handlePageUpdate = page => {
-        this.setState({ currentPage: page }), () => {
+        this.setState({ currentPage: page }, () => {
             this.updateResults();
-        };
+        });
     };
 
     componentDidMount() {
@@ -43,7 +43,12 @@ export default class Artists extends Component {
             return <Artist key={artist.id} artist={artist} />;
         });
 
-        <Pageable currentPage={currentPage} totalPages={totalPages} updatePage={this.handleUpdatePage} />;
-        return <div>{artistsComponents}</div>;
+        return (
+            <Fragment>
+                <Pageable currentPage={currentPage} totalPages={totalPages} updatePage={this.handlePageUpdate} />;
+                <div>{artistsComponents}</div>;
+            </Fragment>
+        );
+        
     }
 }
