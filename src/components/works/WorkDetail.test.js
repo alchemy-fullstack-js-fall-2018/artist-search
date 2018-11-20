@@ -14,7 +14,7 @@ describe ('tests for WorkDetail component', () => {
     title: 'Blue'
   };
   it('renders an WorkDetail component', () => {
-    const wrapper = shallow(<WorkDetail match={ { params: { artist: 'Joni', title: 'Blue' } }} />);
+    const wrapper = shallow(<WorkDetail match={ { params } } />);
     expect(wrapper).toMatchSnapshot();
   });
 
