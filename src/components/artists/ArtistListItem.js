@@ -12,7 +12,6 @@ const ArtistListItem = ({ result }) => {
       <Link to={ROUTES.ARTIST.linkTo(id)}>Get Details</Link>
     </li>
   );
-
 };
 
 ArtistListItem.propTypes = {

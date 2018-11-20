@@ -1,11 +1,11 @@
-import Artists from '../components/artists/Artists';
+import ArtistSearch from '../components/artists/ArtistSearch';
 import ArtistDetail from '../components/artists/ArtistDetail';
 import WorkDetail from '../components/works/WorkDetail';
 
 export const ROUTES = {
   ARTIST_SEARCH: {
     path: '/artistSearch',
-    Component: Artists,
+    Component: ArtistSearch,
     linkTo: () => '/artistSearch'
   },
   ARTIST: {
