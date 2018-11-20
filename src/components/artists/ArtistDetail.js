@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getArtist } from '../../services/musicSearch';
+import Works from '../works/Works';
 
 export default class ArtistDetail extends Component {
   state = {
@@ -16,12 +17,16 @@ export default class ArtistDetail extends Component {
   }
 
   render() {
-    const { id, name, description } = this.state.artist;
+    const { name, description, works } = this.state.artist;
+    if(works === undefined) {
+      return null;
+    }
+    
     return (
       <div>
         <h3>{name}</h3>
         <h2>{description}</h2>
-        <h2>work id:{id}</h2>
+        <Works works={works} name={name} />
       </div>
     );
   }
