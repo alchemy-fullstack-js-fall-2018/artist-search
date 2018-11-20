@@ -23,10 +23,10 @@ export default class Artist extends Component {
     return (
       <div>
         <h2>{name}</h2>
-        <Songs
+        {name && <Songs
           works={works}
           artist={name}
-        />
+        />}
       </div>
     );
   }
