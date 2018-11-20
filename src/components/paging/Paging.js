@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Paging.css';
+import PropTypes from 'prop-types';
 
-export default function Paging({ currentPage, totalPages, updatePage }) {
- 
+const Paging = ({ currentPage, totalPages, updatePage }) => {
+
   let previousButton = null;
   if(currentPage > 1) {
     previousButton = <button onClick={ () => updatePage(currentPage - 1)}>&lt;</button>;
@@ -20,4 +21,12 @@ export default function Paging({ currentPage, totalPages, updatePage }) {
       {nextButton}
     </div>
   );
-}
+};
+
+Paging.propTypes = {
+  currentPage: PropTypes.number,
+  totalPages: PropTypes.number,
+  updatePage: PropTypes.func.isRequired,
+};
+
+export default Paging;

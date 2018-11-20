@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { getArtist } from '../../services/musicSearch';
 import Works from '../works/Works';
+import PropTypes from 'prop-types';
+
 
 export default class ArtistDetail extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired
+  };
+
   state = {
     artist: {}
   };
@@ -21,7 +27,7 @@ export default class ArtistDetail extends Component {
     if(works === undefined) {
       return null;
     }
-    
+
     return (
       <div>
         <h3>{name}</h3>
