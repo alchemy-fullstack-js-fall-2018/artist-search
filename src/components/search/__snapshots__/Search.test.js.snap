@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search renders a search component 1`] = `
+<Fragment>
+  <h2>
+    Artist Search
+  </h2>
+  <div>
+    <form>
+      <label>
+         Search for Artists By Name:
+        <input
+          name="artistName"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+    </form>
+  </div>
+</Fragment>
+`;
