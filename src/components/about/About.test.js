@@ -1,8 +1,10 @@
-import Footer from './Footer';
+import React from 'react';
+import About from './About';
+import { shallow } from 'enzyme';
 
-describe('Footer Component', () => {
-  it('should be a footer', () => {
-    const footer = new Footer();
-    expect(footer.render()).toMatchSnapshot();
+describe('About Component', () => {
+  it('should render about page', () => {
+    const wrapper = shallow(<About />);
+    expect(wrapper).toMatchSnapshot();
   });
 });
