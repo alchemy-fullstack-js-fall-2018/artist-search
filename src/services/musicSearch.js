@@ -22,6 +22,7 @@ export const getArtist = id => {
     .then(artist => ({
       id: artist.id,
       name: artist.name,
+      description: artist.disambiguation,
       works: artist.works
     }));
 };
