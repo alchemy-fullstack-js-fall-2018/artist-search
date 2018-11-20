@@ -8,7 +8,7 @@ const ArtistListItem = ({ result }) => {
 
   return (
     <li>
-      <p>{name} ({type})- {description}</p>
+      <p>{name} ({type}) - {description}</p>
       <Link to={ROUTES.ARTIST.linkTo(id)}>Get Details</Link>
     </li>
   );

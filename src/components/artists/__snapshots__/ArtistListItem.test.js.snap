@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for ArtistListItem component renders an ArtistListItem component 1`] = `
+<li>
+  <p>
+    Joni Mitchell
+     (
+    Person
+    ) - 
+    American folk singer
+  </p>
+  <Link
+    replace={false}
+    to="/artists/12345"
+  >
+    Get Details
+  </Link>
+</li>
+`;
