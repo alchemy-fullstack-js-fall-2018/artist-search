@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../routes/routes';
 
-//turn this guy into a link to a song detail, passing the artist's name along
+
 
 const Song = ({ title, artist }) => {
   return (
     <Fragment>
       <h3>{title}</h3>
-      {artist}
+      <Link to={ROUTES.LYRICS.linkTo(title, artist)}>Get the lyrics!</Link>
     </Fragment>
   );
 };

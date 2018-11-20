@@ -25,7 +25,7 @@ export const getArtist = id => {
 };
 
 export const getLyrics = (artist, song) => {
-  return get(`https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search/${artist.name}/${song.title}`)
+  return get(`https://api.lyrics.ovh/v1/${artist}/${song}`)
     .then(song => ({
       lyrics: song.lyrics
     }));

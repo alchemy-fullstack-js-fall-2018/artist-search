@@ -18,7 +18,8 @@ export default class ArtistDetail extends Component {
   }
 
   render() {
-    const { id, name, songs = [] } = this.state.artist;
+    const { id, name, songs } = this.state.artist;
+    if(!songs) return null;
 
     return (
       // <div className={styles.artist}>
