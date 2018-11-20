@@ -14,8 +14,8 @@ export const ROUTES = {
     linkTo: id => `/artists/${id}`
   },
   WORK: {
-    path: '/works/??',
+    path: '/works/:artist/:title',
     Component: WorkDetail,
-    linkTo: id => '/works/??'
+    linkTo: (artist, title) => `/works/${artist}/${title}`
   }
 };

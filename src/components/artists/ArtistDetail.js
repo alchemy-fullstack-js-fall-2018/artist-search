@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Works from '../works/Works';
+//import Works from '../works/Works';
+import WorkListItem from '../works/WorkListItem'
 import { getArtist } from '../../services/fetch';
 
 export default class ArtistDetail extends Component {
@@ -17,11 +18,11 @@ export default class ArtistDetail extends Component {
   }
 
   render() {
-    const { id, name, works = [] } = this.state.artist;
+    const { name = 'default', works = [] } = this.state.artist;
     return (
       <div>
         <h2>{name}</h2>
-        <Works works={works} />
+        <p>{works.map(work => <WorkListItem key={work.id} artist={name} title={work.title} />)}</p>
       </div>
     );
   }
