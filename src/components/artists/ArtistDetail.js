@@ -18,7 +18,7 @@ export default class ArtistDetail extends Component {
   }
 
   render() {
-    const { name = 'default', works = [] } = this.state.artist;
+    const { name, works = [] } = this.state.artist;
     return (
       <div>
         <h2>{name}</h2>
