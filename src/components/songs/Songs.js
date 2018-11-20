@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/routes';
 
-
-
 const Song = ({ title, artist }) => {
   return (
     <Fragment>

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'querystring';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { getArtists } from '../../services/musicSearch';
 import { ROUTES } from '../../routes/routes';
 import Paging from '../paging/Paging';
