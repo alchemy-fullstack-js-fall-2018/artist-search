@@ -12,7 +12,6 @@ export default function App() {
     <Router>
       <Switch>
         <Route path={ROUTES.SEARCH.path} component={ROUTES.SEARCH.Component} />
-        {/* <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path} /> */}
         <Redirect to={ROUTES.SEARCH.path} />
       </Switch>
     </Router>
