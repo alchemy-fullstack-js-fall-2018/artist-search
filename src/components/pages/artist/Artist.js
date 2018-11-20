@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Songs from '../songs/Songs';
-import { getArtist } from '../../services/musicSearch';
+import Songs from './songs/Songs';
+import { getArtist } from '../../../services/musicSearch';
 
 export default class Artist extends Component {
   state = {

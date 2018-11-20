@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { getLyrics } from '../../services/lyricSearch';
+import { getLyrics } from '../../../services/lyricSearch';
 
 import styles from './Lyrics.css';
 

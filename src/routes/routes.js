@@ -1,7 +1,7 @@
-import About from '../components/about/About';
-import Search from '../components/search/Search';
-import Artist from '../components/artist/Artist';
-import Lyrics from '../components/lyrics/Lyrics';
+import About from '../components/pages/about/About';
+import Search from '../components/pages/search/Search';
+import Artist from '../components/pages/artist/Artist';
+import Lyrics from '../components/pages/lyrics/Lyrics';
 
 export const ROUTES = {
   ABOUT: {
