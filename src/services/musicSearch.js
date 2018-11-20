@@ -2,7 +2,7 @@ import { get } from './request';
 const PAGE_SIZE = 10;
 
 export const getArtists = (searchName, page = 1) => {
-  const offset = (page - 1) * 25;
+  const offset = (page - 1) * 10;
   return get(`http://musicbrainz.org/ws/2/artist?query=${searchName}&limit=${PAGE_SIZE}&offset=${offset}&fmt=json`)
     .then(({ count, artists }) => {
       return {
@@ -21,5 +21,12 @@ export const getArtist = id => {
       id: artist.id,
       name: artist.name,
       songs: artist.works
+    }));
+};
+
+export const getLyrics = (artist, song) => {
+  return get(`https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search/${artist.name}/${song.title}`)
+    .then(song => ({
+      lyrics: song.lyrics
     }));
 };

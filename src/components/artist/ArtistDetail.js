@@ -25,7 +25,7 @@ export default class ArtistDetail extends Component {
       <div>
         <h3>{name}</h3>
         <h4>BAND ID: {id}</h4>
-        <Songs songs={songs} />
+        <Songs artist={name} songs={songs} />
       </div>
     );
   }
