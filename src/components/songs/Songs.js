@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/routes';
+import PropTypes from 'prop-types';
 
 const Song = ({ artist, title }) => {
   return (
@@ -12,19 +12,25 @@ const Song = ({ artist, title }) => {
   );
 };
 
-export default function Songs({ artist, works }) {
+function Songs({ artist, works }) {
   return (
     <Fragment>
       <h3>Songs:</h3>
-      {
-        works.map(work =>
-          <Song
-            key={work.id}
-            artist={artist}
-            title={work.title}
-            id={work.id}
-          />)
+      {works.map(work =>
+        <Song
+          key={work.id}
+          artist={artist}
+          title={work.title}
+          id={work.id}
+        />)
       }
     </Fragment>
   );
 }
+
+Songs.propTypes = {
+  artist: PropTypes.string.isRequired,
+  works: PropTypes.array.isRequired
+};
+
+export default Songs;

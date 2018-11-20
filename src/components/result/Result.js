@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/routes';
+import PropTypes from 'prop-types';
 
-export default function Result({ name, description, id }) {
+
+function Result({ name, description, id }) {
   let desc = null;
   if(description) {
     desc = ` - ${description}`;
@@ -15,3 +17,11 @@ export default function Result({ name, description, id }) {
     </div>
   );
 }
+
+Result.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string
+};
+
+export default Result;

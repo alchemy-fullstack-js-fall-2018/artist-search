@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Lyrics Component renders component 1`] = `undefined`;
+exports[`Lyrics Component renders component 1`] = `
+<div>
+  <h3>
+    Metallica
+     - 
+    Atlas, Rise!
+  </h3>
+  <pre
+    className="lyrics"
+  >
+    I believe in a thing called love
+  </pre>
+</div>
+`;

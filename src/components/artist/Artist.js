@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Songs from '../songs/Songs';
 import { getArtist } from '../../services/musicSearch';
 
