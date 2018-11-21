@@ -13,8 +13,15 @@ Search for artists by name.
 * Create a works page which displays the lyrics of a song
   * Use `https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search` to get lyrics
 
-# Testing
+## Testing
 
 * Snapshot testing
 * Enzyme testing
 
+## Rubric
+
+* fetches: 2 points
+* Components / state management 8 points
+* Router 6 points
+* Tests 2 points
+* syntax/Clean code 2 points
