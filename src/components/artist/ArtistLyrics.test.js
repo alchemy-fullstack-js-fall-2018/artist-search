@@ -9,14 +9,14 @@ jest.mock('../../services/musicSearch', () => {
 describe('Lyrics test', () => {
 
   let wrapper;
-  const location = { pathname: '/50Cent/Money/MakingIt' };
+  const match = { params: {artistName: 'Mariah Carey', songName: 'Butterflies'} };
+
   beforeEach(() => {
-    wrapper = shallow(<ArtistLyrics location={location}/>);
+    wrapper = shallow(<ArtistLyrics match={match}/>);
   });
 
    it('renders an Lyrics Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
 
 });
