@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for ArtistDetail component renders an ArtistDetail component 1`] = `
+<div>
+  <h2 />
+  <p />
+</div>
+`;

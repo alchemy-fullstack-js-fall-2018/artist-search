@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for QueryArtists component renders an QueryArtists component 1`] = `
+<form>
+  <label
+    htmlFor="name"
+  >
+    Artist name: 
+  </label>
+  <input
+    name="name"
+    onChange={[MockFunction]}
+    type="text"
+    value="Joni Mitchell"
+  />
+</form>
+`;
