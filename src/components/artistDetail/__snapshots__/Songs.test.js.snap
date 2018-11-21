@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs component renders a Songs component 1`] = `
+<Fragment>
+  <ul>
+    <li
+      id="songItem"
+      key="1"
+    >
+      <Link
+        replace={false}
+        to="/lyrics/Nirvana/undefined"
+      />
+    </li>
+    <li
+      id="songItem"
+      key="2"
+    >
+      <Link
+        replace={false}
+        to="/lyrics/Nirvana/undefined"
+      />
+    </li>
+    <li
+      id="songItem"
+      key="3"
+    >
+      <Link
+        replace={false}
+        to="/lyrics/Nirvana/undefined"
+      />
+    </li>
+  </ul>
+</Fragment>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search component renders a search component 1`] = `
+<Fragment>
+  <div
+    id="searchBar"
+  >
+    <label
+      htmlFor="search"
+    >
+      Search for an Artist
+    </label>
+    <input
+      id="search"
+      name="searchQuery"
+      onChange={[MockFunction]}
+    />
+  </div>
+</Fragment>
+`;

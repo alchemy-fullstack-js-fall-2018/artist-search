@@ -1,0 +1,19 @@
+#pagingBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Black Ops One', cursive;
+  color: black;
+
+  button {
+    height: 7vh;
+    margin: 3em;
+    width: 10vw;
+    background: lightgrey;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 1px 1px grey;
+
+  }
+}

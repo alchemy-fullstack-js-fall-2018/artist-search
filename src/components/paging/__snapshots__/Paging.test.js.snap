@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paging component renders a Paging component 1`] = `
+<Fragment>
+  <div
+    id="pagingBar"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Previous
+    </button>
+    <h1>
+      3
+       out of 
+      10
+    </h1>
+    <button
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
+</Fragment>
+`;

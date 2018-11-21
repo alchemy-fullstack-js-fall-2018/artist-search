@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SongDetails component renders a SongDetails component 1`] = `
+<Fragment>
+  <div
+    id="container"
+  >
+    <h1>
+      Hey Jude
+       by 
+      The Beatles
+    </h1>
+    <p>
+      Lalalalalala
+    </p>
+  </div>
+</Fragment>
+`;
