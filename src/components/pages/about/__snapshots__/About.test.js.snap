@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Component should render about page 1`] = `
+<section>
+  <h2>
+    Keep listening
+  </h2>
+  <p>
+    The world is a wonderful place, and you never know what you might hear
+  </p>
+</section>
+`;

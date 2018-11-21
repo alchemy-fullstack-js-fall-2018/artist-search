@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should be a header 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    Encylopedia Musica
+  </h1>
+  <nav
+    className="nav"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/search"
+    >
+      Search
+    </Link>
+    <Link
+      className="link"
+      replace={false}
+      to="/about"
+    >
+      About
+    </Link>
+  </nav>
+</header>
+`;

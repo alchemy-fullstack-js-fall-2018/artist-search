@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs Component renders component 1`] = `
+<Fragment>
+  <h3>
+    Songs:
+  </h3>
+  <Song
+    artist="John Doe"
+    id="abcd1234"
+    key="abcd1234"
+    title="Rocking the Night Away"
+  />
+</Fragment>
+`;

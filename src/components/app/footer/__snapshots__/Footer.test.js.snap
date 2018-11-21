@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should be a footer 1`] = `
+<footer
+  className="footer"
+>
+  <p>
+    Made with the utmost seriousness - 2018
+  </p>
+</footer>
+`;
