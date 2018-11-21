@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export default class ArtistDetail extends Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   };
 
   state = {
@@ -14,9 +14,7 @@ export default class ArtistDetail extends Component {
 
   fetchArtist = () => {
     const id = this.props.location.pathname.slice(1).split('/')[1];
-    getArtist(id).then(artist =>
-      this.setState({ artist })
-    );
+    getArtist(id).then(artist => this.setState({ artist }));
   };
 
   componentDidMount() {

@@ -9,7 +9,7 @@ jest.mock('../../services/musicSearch', () => {
 describe('Lyrics', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Lyrics location={{ pathname: '/sldkfj' }}/>);
+    wrapper = shallow(<Lyrics location={{ pathname: '/sldkfj' }} />);
   });
 
   it('renders an Lyrics Component', () => {

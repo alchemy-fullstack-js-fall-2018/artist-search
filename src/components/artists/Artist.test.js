@@ -24,6 +24,8 @@ describe('Artist', () => {
   });
 
   it('links to a work by id', () => {
-    expect(wrapper.find('Link').props().to).toEqual(ROUTES.ARTIST.linkTo('1234'));
+    expect(wrapper.find('Link').props().to).toEqual(
+      ROUTES.ARTIST.linkTo('1234')
+    );
   });
 });

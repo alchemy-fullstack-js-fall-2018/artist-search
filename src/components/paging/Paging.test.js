@@ -10,43 +10,57 @@ describe('Paging', () => {
 
   it('decrements the currentPage when previous is clicked', () => {
     const updatePageFn = jest.fn();
-    const wrapper = shallow(<Paging currentPage={10}
-      totalPages={10}
-      updatePage={updatePageFn} />);
+    const wrapper = shallow(
+      <Paging currentPage={10} totalPages={10} updatePage={updatePageFn} />
+    );
 
-    wrapper.find('button').at(0).simulate('click');
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
 
     expect(updatePageFn.mock.calls[0][0]).toEqual(9);
-
   });
 
   it('decrements the currentPage when previous is clicked', () => {
     const updatePageFn = jest.fn();
-    const wrapper = shallow(<Paging currentPage={10}
-      totalPages={20}
-      updatePage={updatePageFn} />);
+    const wrapper = shallow(
+      <Paging currentPage={10} totalPages={20} updatePage={updatePageFn} />
+    );
 
-    wrapper.find('button').at(1).simulate('click');
+    wrapper
+      .find('button')
+      .at(1)
+      .simulate('click');
 
     expect(updatePageFn.mock.calls[0][0]).toEqual(11);
-
   });
 
   it('the previous button is not displayed on the first page', () => {
-    const wrapper = shallow(<Paging currentPage={1}
-      totalPages={20}
-      updatePage={() => { }} />);
+    const wrapper = shallow(
+      <Paging currentPage={1} totalPages={20} updatePage={() => {}} />
+    );
 
     expect(wrapper.find('button')).toHaveLength(1);
-    expect(wrapper.find('button').at(0).text()).toEqual('>');
+    expect(
+      wrapper
+        .find('button')
+        .at(0)
+        .text()
+    ).toEqual('>');
   });
 
   it('the next button is not displayed on the last page', () => {
-    const wrapper = shallow(<Paging currentPage={20}
-      totalPages={20}
-      updatePage={() => { }} />);
+    const wrapper = shallow(
+      <Paging currentPage={20} totalPages={20} updatePage={() => {}} />
+    );
 
     expect(wrapper.find('button')).toHaveLength(1);
-    expect(wrapper.find('button').at(0).text()).toEqual('<');
+    expect(
+      wrapper
+        .find('button')
+        .at(0)
+        .text()
+    ).toEqual('<');
   });
 });
