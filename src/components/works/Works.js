@@ -1,17 +1,21 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../routes/routes';
 
-const Work = ({ title }) => {
+const Work = ({ title, name }) => {
   return (
     <Fragment>
-      <h3>{title}</h3>
+      <li>
+      {title} - <Link to={ROUTES.LYRICS.linkTo(name, title)}>Get Lyrics:</Link>
+    </li>
     </Fragment>
   );
 };
 
-export default function Works({ works }) {
+export default function Works({ works, name }) {
   return (
     <Fragment>
-      {works.map(work => <Work key={work.id} title={work.title} />)}
+      {works.map(work => <Work key={work.id} title={work.title} name={name} />)}
     </Fragment>
   );
 }

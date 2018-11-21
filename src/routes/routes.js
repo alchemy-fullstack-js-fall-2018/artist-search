@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from '../components/search/Search';
 import ArtistDetail from '../components/artist/ArtistDetail';
+import ArtistLyrics from '../components/artist/ArtistLyrics';
 
 export const ROUTES = {
   ARTIST: {
@@ -17,5 +18,10 @@ export const ROUTES = {
     path: '/landing',
     Component: () => <h1>Welcome To Artist Search</h1>,
     linkTo: () => '/landing'
+  },
+  LYRICS: {
+    path: '/artists/:artistName/:songName',
+    Component: ArtistLyrics,
+    linkTo: (name, song) => `/artists/${name}/${song}`
   }
 };

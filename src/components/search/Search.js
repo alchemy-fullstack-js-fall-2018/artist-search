@@ -93,7 +93,7 @@ updateHistory = search => {
     return (
       <Fragment>
 
-        <Paging currentPage={page}
+        <Paging currentPage={parseInt(page)}
           totalPages={totalPages}
           updatePage={this.handlePageUpdate} />
         <Link to={ROUTES.LANDING.linkTo()}>Link!</Link>
