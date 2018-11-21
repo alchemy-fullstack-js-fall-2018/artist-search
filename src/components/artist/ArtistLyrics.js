@@ -10,19 +10,28 @@ export default class ArtistLyrics extends Component {
     title: ''
   }
 
-  componentDidMount() {
-    console.log(this.props.match)
+  fetchLyrics = () => {
     const artist = this.props.match.params.artistName;
     const title = this.props.match.params.songName;
-    console.log(title)
-
-      getLyrics( artist, title ).then(result => {
+    getLyrics( artist, title ).then(result => {
       this.setState({ lyrics: result.lyrics, artist, title })
     });
   }
 
+
+  componentDidMount() {
+    // const artist = this.props.match.params.artistName;
+    // const title = this.props.match.params.songName;
+
+    //   getLyrics( artist, title ).then(result => {
+    //   this.setState({ lyrics: result.lyrics, artist, title })
+    // });
+    this.fetchLyrics();
+  }
+
   render() {
     const { title, artist, lyrics } = this.state;
+
     return (
       <div className={styles.lyric}>
         <h3>{artist}</h3>

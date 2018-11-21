@@ -20,19 +20,6 @@ class Search extends Component {
     artists: []
   };
 
-    // state = {
-  //   currentPage: 1,
-  //   totalPages: '',
-  // }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   //PureComponent
-  //   return nextProps !== this.props && nextState !== this.state;
-
-  //   // Component
-  //   return true
-  // }
-
   doSearch = () => {
     const { searchTerm, page } = queryString.parse(this.props.location.search.slice(1));
     if(!searchTerm) return;
@@ -50,10 +37,6 @@ class Search extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    // if(prevProps.location.search !== this.props.location.search) {
-    //   const search = queryString.parse(this.props.location.search.slice(1));
-    //   this.setState({ searchTerm: search.searchTerm });
-    // }
 
     if(prevProps.location.search !== this.props.location.search) {
       this.doSearch();
