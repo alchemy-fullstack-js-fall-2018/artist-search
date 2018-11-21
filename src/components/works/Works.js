@@ -15,14 +15,16 @@ const Work = ({ name, title }) => {
 const Works = ({ works, name }) => {
   return (
     <Fragment>
-      {works.map(work => <Work key={work.id} title={work.title} name={name} />)}
+      {works.map(work => (
+        <Work key={work.id} title={work.title} name={name} />
+      ))}
     </Fragment>
   );
 };
 
 Works.propTypes = {
   works: PropTypes.array.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string
 };
 
 export default Works;

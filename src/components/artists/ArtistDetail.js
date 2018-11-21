@@ -3,10 +3,9 @@ import { getArtist } from '../../services/musicSearch';
 import Works from '../works/Works';
 import PropTypes from 'prop-types';
 
-
 export default class ArtistDetail extends Component {
   static propTypes = {
-    match: PropTypes.object.isRequired
+    location: PropTypes.object.isRequired,
   };
 
   state = {
@@ -14,8 +13,10 @@ export default class ArtistDetail extends Component {
   };
 
   fetchArtist = () => {
-    getArtist(this.props.match.params.id)
-      .then(artist => this.setState({ artist }));
+    const id = this.props.location.pathname.slice(1).split('/')[1];
+    getArtist(id).then(artist =>
+      this.setState({ artist })
+    );
   };
 
   componentDidMount() {
@@ -24,9 +25,7 @@ export default class ArtistDetail extends Component {
 
   render() {
     const { name, description, works } = this.state.artist;
-    if(works === undefined) {
-      return null;
-    }
+    if(works === undefined) return null;
 
     return (
       <div>

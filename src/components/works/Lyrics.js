@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class Lyrics extends Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   };
 
   state = {

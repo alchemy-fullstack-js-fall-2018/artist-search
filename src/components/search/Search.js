@@ -77,7 +77,8 @@ class Search extends Component {
           <input id="searchTerm" type="text" />
           <button type="submit">Search</button>
         </form>
-        <Paging currentPage={currentPage}
+        <Paging
+          currentPage={currentPage}
           totalPages={totalPages}
           updatePage={this.updateHandlePage}
         />

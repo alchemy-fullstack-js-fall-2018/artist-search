@@ -4,7 +4,6 @@ import { ROUTES } from '../../routes/routes';
 import PropTypes from 'prop-types';
 
 const Artist = ({ name, description, id }) => {
-
   return (
     <div>
       <h3>

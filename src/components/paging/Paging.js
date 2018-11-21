@@ -3,14 +3,17 @@ import styles from './Paging.css';
 import PropTypes from 'prop-types';
 
 const Paging = ({ currentPage, totalPages, updatePage }) => {
-
   let previousButton = null;
   if(currentPage > 1) {
-    previousButton = <button onClick={ () => updatePage(currentPage - 1)}>&lt;</button>;
+    previousButton = (
+      <button onClick={() => updatePage(currentPage - 1)}>&lt;</button>
+    );
   }
   let nextButton = null;
   if(currentPage < totalPages) {
-    nextButton = <button onClick={ () => updatePage(currentPage + 1)}>&gt;</button>;
+    nextButton = (
+      <button onClick={() => updatePage(currentPage + 1)}>&gt;</button>
+    );
   }
   return (
     <div className={styles.paging}>
@@ -26,7 +29,7 @@ const Paging = ({ currentPage, totalPages, updatePage }) => {
 Paging.propTypes = {
   currentPage: PropTypes.number,
   totalPages: PropTypes.number,
-  updatePage: PropTypes.func.isRequired,
+  updatePage: PropTypes.func
 };
 
 export default Paging;
