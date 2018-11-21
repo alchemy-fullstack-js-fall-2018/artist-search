@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ArtistDetail from './ArtistDetail'
-import Artist from './Artist'
+import ArtistDetail from './ArtistDetail';
+import Artist from './Artist';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('Arist Test', () => {
