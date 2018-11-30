@@ -8,7 +8,7 @@ export const ROUTES = {
     linkPath: () => '/artist-search'
   },
   ARTIST: {
-    path: '/artist/:id',
+    path: '/artists/:id',
     Component: ArtistDetail,
     linkTo: id => `/artists/${id}`
   }

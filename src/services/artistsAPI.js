@@ -17,6 +17,11 @@ export const getArtists = (searchName = 'Nirvana', page = 0) => {
     });
 };
 
-// export const getArtist = id => {
-  
-// };
+export const getArtist = id => {
+  return get(`http://musicbrainz.org/ws/2/artist/${id}?fmt=json&inc=works`)
+    .then(artist => ({
+      id: artist.id,
+      name: artist.name,
+      works: artist.works
+    }));
+};

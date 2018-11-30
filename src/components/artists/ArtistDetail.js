@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getArtist } from '../../services/fetch';
+import { getArtist } from '../../services/artistsAPI';
 import Works from '../works/Works';
 
 export default class ArtistDetail extends Component {
@@ -9,9 +9,13 @@ export default class ArtistDetail extends Component {
 
   fetchArtist = () => {
     getArtist(this.props.match.params.id)
-      .then(artist => this.setState({ artist }));
+      .then(artist => {
+        console.log(artist);
+        this.setState({ artist })
+      });
   };
-  mountedComponent() {
+  componentDidMount() {
+    console.log('hellllooo');
     this.fetchArtist();
   }
 
@@ -23,6 +27,7 @@ export default class ArtistDetail extends Component {
 
     return (
       <div>
+        <h1>HELLOOOOO</h1>
         <h3>{name}</h3>
         <h4>{id}</h4>
         <Works name={name} works={works} />
