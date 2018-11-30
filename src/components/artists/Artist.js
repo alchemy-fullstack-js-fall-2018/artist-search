@@ -6,7 +6,7 @@ export default function Artist({ name, description, id }) {
   return (
     <div>
       <h3>{name} - {description}</h3>
-      <Link to={ROUTES.ARTIST.linkTo(id)}>Get Details</Link>
+      <Link to={ROUTES.ARTIST.linkTo(id)}>Get Artist Details</Link>
     </div>
   );
 }

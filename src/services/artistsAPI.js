@@ -1,18 +1,22 @@
-export const getArtists = page => {
-  return fetch('http://musicbrainz.org/ws/2/artist?query=nirvana&fmt=json&limit=25', {
-    headers: { origin: null }
-  })
-    .then(res => res.json())
-    .then(json => {
-      const artist = json.results.map(result => {
-        return {
-          artist: artist,
-        };
-      });
+import { get } from './request';
 
+const PAGE_SIZE = 25;
+
+export const getArtists = (searchName = 'Nirvana', page = 0) => {
+  const offset = page * PAGE_SIZE;
+  return get(`http://musicbrainz.org/ws/2/artist?query=${searchName}&limit=${PAGE_SIZE}&offset${offset}&fmt=json`)
+    .then(({ count, artists }) => {
       return {
-        pages: json.info.pages,
-        artist
+        pages: Math.ceil(count / PAGE_SIZE),
+        artists: artists.map(artist => ({
+          name: artist.name,
+          description: artist.disambiguation,
+          id: artist.id
+        }))
       };
     });
 };
+
+// export const getArtist = id => {
+  
+// };

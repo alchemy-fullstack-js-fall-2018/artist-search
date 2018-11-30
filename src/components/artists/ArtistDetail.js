@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getArtist } from '../../services/artistSearch';
+import { getArtist } from '../../services/fetch';
 import Works from '../works/Works';
 
 export default class ArtistDetail extends Component {
