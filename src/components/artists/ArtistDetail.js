@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getArtist } from '../../services/artistsAPI';
-import Works from '../works/Works';
+import Works from '../work/Work';
 
 export default class ArtistDetail extends Component {
   state = {
@@ -11,11 +11,10 @@ export default class ArtistDetail extends Component {
     getArtist(this.props.match.params.id)
       .then(artist => {
         console.log(artist);
-        this.setState({ artist })
+        this.setState({ artist });
       });
   };
   componentDidMount() {
-    console.log('hellllooo');
     this.fetchArtist();
   }
 
@@ -27,7 +26,6 @@ export default class ArtistDetail extends Component {
 
     return (
       <div>
-        <h1>HELLOOOOO</h1>
         <h3>{name}</h3>
         <h4>{id}</h4>
         <Works name={name} works={works} />
