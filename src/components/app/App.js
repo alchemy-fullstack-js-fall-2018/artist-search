@@ -11,7 +11,7 @@ export default function App() {
         <Switch>
           <Route component={ROUTES.ARTIST_SEARCH.Component} path={ROUTES.ARTIST_SEARCH.path} />
           <Route component={ROUTES.ARTIST.Component} path={ROUTES.ARTIST.path} />
-          {/* <Route component={ROUTES.ARTIST_WORKS.Component} path={ROUTES.ARTIST_WORKS.path} /> */}
+          <Route component={ROUTES.LYRICS.Component} path={ROUTES.LYRICS.path} />
           <Redirect to={ROUTES.ARTIST_SEARCH.path} />
         </Switch>
       </div>

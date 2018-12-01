@@ -25,3 +25,8 @@ export const getArtist = id => {
       works: artist.works
     }));
 };
+
+export const getLyrics = (artist, title) => {
+  return get(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    .then(res => res.lyrics);
+};

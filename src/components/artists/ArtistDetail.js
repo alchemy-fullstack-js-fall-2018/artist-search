@@ -28,7 +28,7 @@ export default class ArtistDetail extends Component {
       <div>
         <h3>{name}</h3>
         <h4>{id}</h4>
-        <Works name={name} works={works} />
+        <Works name={name} works={works}/>
       </div>
     );
   }
