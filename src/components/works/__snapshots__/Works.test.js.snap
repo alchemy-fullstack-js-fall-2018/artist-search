@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Works renders an Works Component 1`] = `
+<Fragment>
+  <Work
+    key="1234"
+    name="bob"
+    title="something"
+  />
+</Fragment>
+`;
